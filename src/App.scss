@@ -1,0 +1,63 @@
+@import '~bpk-tokens/tokens/base.default.scss';
+@import '~bpk-mixins/index';
+@import '~bpk-stylesheets';
+
+@mixin container {
+  max-width: $bpk-breakpoint-desktop;
+  margin: 0 auto;
+}
+
+.App {
+  text-align: center;
+  justify-content: center;
+  &__header {
+    padding: $bpk-spacing-lg * 2;
+    background-color: $bpk-color-sky-blue;
+    background-image: $bpk-primary-gradient;
+    color: $bpk-color-white;
+
+    @include bpk-box-shadow-sm;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-xl;
+    }
+  }
+
+  &__header-inner {
+    @include container;
+  }
+
+  &__main {
+    padding: $bpk-spacing-xxl;
+
+    @include container;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-base;
+    }
+  }
+
+  &__heading {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__text {
+    margin-bottom: $bpk-spacing-sm;
+  }
+  &__calendar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .bpk-calendar {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+  }
+
+  .bpk-input {
+    margin-bottom: 20px;
+  }
+}
